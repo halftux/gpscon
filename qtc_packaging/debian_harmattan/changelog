@@ -1,0 +1,50 @@
+gpscon (0.0.12ham1) unstable; urgency=low
+  * stop updates before closing and writing gpx
+
+ -- code master <halftux@codebox>  Sun, 18 Nov 2018 19:27:49 +0100
+ 
+ gpscon (0.0.11ham1) unstable; urgency=low
+  * added dump of the first events
+
+ -- code master <halftux@codebox>  Sat, 13 Oct 2017 19:27:49 +0100
+ 
+gpscon (0.0.10ham1) unstable; urgency=low
+  * added track segment to gpx export
+
+ -- code master <halftux@codebox>  Tue, 29 Nov 2016 19:27:49 +0100
+
+gpscon (0.0.9ham1) unstable; urgency=low
+  * added timeout function
+
+ -- code master <halftux@codebox>  Sun, 22 Nov 2016 17:19:40 +0100
+ 
+gpscon (0.0.8ham1) unstable; urgency=low
+  * added script option (deactivate user input)
+
+ -- code master <halftux@codebox>  Sat, 27 Feb 2016 14:48:58 +0100
+
+gpscon (0.0.7ham1) unstable; urgency=low
+  * added convert status
+  * added mark tracks in log file
+
+ -- code master <halftux@codebox>  Fri, 25 Dec 2015 12:14:15 +0100
+
+gpscon (0.0.6ham1) unstable; urgency=low
+  * added icon to debian package
+  * changed package description
+  * changed category to navigation
+
+ -- code master <halftux@codebox>  Sun, 22 Nov 2015 12:19:40 +0100
+
+gpscon (0.0.5ham1) unstable; urgency=low
+  * added interval
+  * added date, time
+  * added log file
+  * added exit x+[enter]
+
+ -- code master <halftux@codebox>  Sun, 15 Nov 2015 12:19:53 +0100
+
+gpscon (0.0.4ham1) unstable; urgency=low
+  * Initial Release
+
+ -- code master <halftux@codebox>  Sun, 09 Aug 2015 22:49:00 +0200

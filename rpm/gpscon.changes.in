@@ -1,0 +1,48 @@
+# Rename this file as sftest.changes to include changelog
+# entries in your RPM file.
+#
+# Add new changelog entries following the format below.
+# Add newest entries to the top of the list.
+# Separate entries from eachother with a blank line.
+
+# * date Author's Name <author's email> version-release
+# - Summary of changes
+* Sun Nov 18 2018 Halftux <less_to_space@web.de> 0.0.12-1
+- stop updates before closing and writing gpx
+
+* Mon Nov 12 2018 Halftux <less_to_space@web.de> 0.0.11-2
+- sailfish fix MetaType QGeoPositionInfo
+
+* Sat Oct 13 2017 Halftux <less_to_space@web.de> 0.0.11-1
+- added dump of the first events
+
+* Tue Nov 29 2016 Halftux <less_to_space@web.de> 0.0.10-1
+- added track segment to gpx export
+
+* Sun Nov 27 2016 Halftux <less_to_space@web.de> 0.0.9-1
+- dismiss first result from onlysat
+- added timeout function
+
+* Sat Feb 27 2016 Halftux <less_to_space@web.de> 0.0.8-2
+- added script option (deactivate user input)
+
+* Sun Nov 22 2015 Halftux <less_to_space@web.de> 0.0.7-1
+- added convert status
+- added mark tracks in log file
+
+* Sun Nov 22 2015 Halftux <less_to_space@web.de> 0.0.6-1
+- added icon to debian package
+- changed package description
+- changed category to navigation
+
+* Sun Nov 15 2015 Halftux <less_to_space@web.de> 0.0.5-1
+- added interval
+- added date, time
+- added log file
+- added exit x+[enter]
+
+* Sun Apr 13 2014 Halftux <less_to_space@web.de> 0.0.4-1
+- Initial release
+
+
+

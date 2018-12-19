@@ -1,0 +1,2 @@
+#!/bin/sh -e
+ln -fs /opt/gpscon/bin/gpscon /usr/bin/gpscon

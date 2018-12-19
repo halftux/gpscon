@@ -1,0 +1,51 @@
+gpscon (0.0.12) unstable; urgency=low
+  * stop updates before closing and writing gpx
+
+ -- Christian Weniger <less_to_space@web.de>  Sun, 18 Nov 2018 19:27:49 +0100
+ 
+ gpscon (0.0.11) unstable; urgency=low
+  * added dump of the first events
+
+ -- Christian Weniger <less_to_space@web.de>  Mon, 12 Oct 2017 19:27:49 +0100
+ 
+gpscon (0.0.10) unstable; urgency=low
+  * added track segment to gpx export
+
+ -- Christian Weniger <less_to_space@web.de>  Tue, 29 Nov 2016 19:27:49 +0100
+
+gpscon (0.0.9) unstable; urgency=low
+  * added timeout function
+
+ -- Christian Weniger <less_to_space@web.de>  Mon, 28 Nov 2016 13:16:26 +0100
+
+gpscon (0.0.8) unstable; urgency=low
+  * added script option (deactivate user input)
+
+ -- Christian Weniger <less_to_space@web.de>  Sat, 27 Feb 2016 14:48:58 +0100
+
+gpscon (0.0.7) unstable; urgency=low
+  * added convert status
+  * added mark tracks in log file
+
+ -- Christian Weniger <less_to_space@web.de>  Fri, 25 Dec 2015 12:14:15 +0100
+
+gpscon (0.0.6) unstable; urgency=low
+  * added icon to debian package
+  * changed package description
+  * changed category to navigation
+
+ -- Christian Weniger <less_to_space@web.de>  Sun, 22 Nov 2015 12:19:40 +0100
+
+gpscon (0.0.5) unstable; urgency=low
+  * added interval
+  * added date, time
+  * added log file
+  * added exit x+[enter]
+
+ -- Christian Weniger <less_to_space@web.de>  Sun, 15 Nov 2015 12:19:53 +0100
+
+gpscon (0.0.4) unstable; urgency=low
+  * Initial Maemo Release
+
+ -- Christian Weniger <less_to_space@web.de>  Sun, 09 Aug 2015 22:49:00 +0200
+
