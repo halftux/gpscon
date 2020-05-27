@@ -24,11 +24,12 @@ class GpsPos : public QObject
 public:
 	GpsPos(QObject *parent = 0);
 	GpsPos(QObject *parent = 0, QString logmethod="none");
-	GpsPos(QObject *parent = 0, bool fout=true, QString posm="all", bool date=false, bool time=false);
-	GpsPos(QObject *parent = 0, int runs=1, int limit=0, int dumps=0, bool lastkv=false, bool showsat=false, bool fout=false, QString posm="onlysat", int interval=0, bool date=false, bool time=false, QString logmethod="none", bool newtrack=false, bool script=true, int tout=0);
+	GpsPos(QObject *parent = 0, bool fout=true, QString posm="all", bool date=false, bool time=false, int dshift=0);
+	GpsPos(QObject *parent = 0, int runs=1, int limit=0, int dumps=0, bool lastkv=false, bool showsat=false, bool fout=false, QString posm="onlysat", int interval=0, bool date=false, bool time=false, QString logmethod="none", bool newtrack=false, bool script=true, int tout=0, int dshift=0);
 	int g_run;
 	int g_runs;
 	int g_dumps;
+	int g_dshift;
 	bool g_showsat;
 	QTimer *timer;
 

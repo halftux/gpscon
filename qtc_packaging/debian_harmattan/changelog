@@ -1,12 +1,17 @@
+gpscon (0.0.13ham1) unstable; urgency=low
+  * date shift option
+
+ -- Christian Weniger <less_to_space@web.de>  Wed, 13 Nov 2019 19:27:49 +0100
+
 gpscon (0.0.12ham1) unstable; urgency=low
   * stop updates before closing and writing gpx
 
  -- code master <halftux@codebox>  Sun, 18 Nov 2018 19:27:49 +0100
  
- gpscon (0.0.11ham1) unstable; urgency=low
+gpscon (0.0.11ham1) unstable; urgency=low
   * added dump of the first events
 
- -- code master <halftux@codebox>  Sat, 13 Oct 2017 19:27:49 +0100
+ -- code master <halftux@codebox>  Thu, 12 Oct 2017 19:27:49 +0100
  
 gpscon (0.0.10ham1) unstable; urgency=low
   * added track segment to gpx export

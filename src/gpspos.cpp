@@ -48,7 +48,7 @@ GpsPos::GpsPos(QObject *parent, QString logmethod) :
 	writegpxdata();
 }
 //call for last known value
-GpsPos::GpsPos(QObject *parent, bool fout, QString posm, bool date, bool time) :
+GpsPos::GpsPos(QObject *parent, bool fout, QString posm, bool date, bool time, int dshift) :
 	QObject(parent)
 {
 #if defined(Q_OS_SAILFISH)
@@ -56,6 +56,7 @@ GpsPos::GpsPos(QObject *parent, bool fout, QString posm, bool date, bool time) :
 #endif
 	b_date=date;
 	b_time=time;
+	g_dshift=dshift;
 	//QGeoPositionInfoSource *source = QGeoPositionInfoSource::createDefaultSource(this);
 	m_position = QGeoPositionInfoSource::createDefaultSource(this);
 	if (m_position)
@@ -71,7 +72,7 @@ GpsPos::GpsPos(QObject *parent, bool fout, QString posm, bool date, bool time) :
 	}
 }
 // call for loop
-GpsPos::GpsPos(QObject *parent, int runs, int limit, int dumps, bool lastkv, bool showsat, bool fout, QString posm, int interval, bool date, bool time, QString logmethod, bool newtrack, bool script, int tout) :
+GpsPos::GpsPos(QObject *parent, int runs, int limit, int dumps, bool lastkv, bool showsat, bool fout, QString posm, int interval, bool date, bool time, QString logmethod, bool newtrack, bool script, int tout, int dshift) :
 	QObject(parent)
 {
 #if defined(Q_OS_SAILFISH)
@@ -81,6 +82,7 @@ GpsPos::GpsPos(QObject *parent, int runs, int limit, int dumps, bool lastkv, boo
 	g_dumps=dumps;
 	g_runs=runs;
 	g_showsat=showsat;
+	g_dshift=dshift;
 	full_out=fout;
 	limit_acc=limit;
 	log_method=logmethod;
@@ -123,7 +125,9 @@ GpsPos::GpsPos(QObject *parent, int runs, int limit, int dumps, bool lastkv, boo
 	{
 		//QGeoSatelliteInfoSource *sats = QGeoSatelliteInfoSource::createDefaultSource(this);
 		m_satellite = QGeoSatelliteInfoSource::createDefaultSource(this);
+#if defined(Q_OS_SAILFISH)
 		if (interval!=0) m_satellite->setUpdateInterval(interval*1000);
+#endif
 		// Listen satellite status changes
 		if (m_satellite != 0)
 		{
@@ -174,7 +178,6 @@ void GpsPos::positionUpdated(const QGeoPositionInfo &info)
 				QDateTime date_time = info.timestamp();
 				QDate date_v = date_time.date();
 				QTime time_v = date_time.time();
-				QString s_date = date_v.toString(Qt::ISODate);
 				QString s_time = time_v.toString(Qt::TextDate);
 				QGeoCoordinate coord = info.coordinate();
 				double d_latitude = coord.latitude();
@@ -191,6 +194,14 @@ void GpsPos::positionUpdated(const QGeoPositionInfo &info)
 				QString s_vertspeed = QString::number(vertspeed);
 				QString s_hacc = QString::number(horizontalacc);
 				QString s_vacc = QString::number(verticalacc);
+
+				if (g_dshift!=0)
+				{
+					qint64 date_number = date_v.toJulianDay();
+					date_number = date_number + g_dshift;
+					date_v = QDate::fromJulianDay(date_number);
+				}
+				QString s_date = date_v.toString(Qt::ISODate);
 
 				if (full_out)
 				{
@@ -245,6 +256,12 @@ void GpsPos::lastknownposition(const QGeoPositionInfo &lastpos)
 			qDebug() << date_time;
 			QDate date_v = date_time.date();
 			QTime time_v = date_time.time();
+			if (g_dshift!=0)
+			{
+				qint64 date_number = date_v.toJulianDay();
+				date_number = date_number + g_dshift;
+				date_v = QDate::fromJulianDay(date_number);
+			}
 			QString s_date = date_v.toString();
 			QString s_time = time_v.toString();
 			if (b_date) cout << "Date: " << s_date << "; ";

@@ -7,6 +7,9 @@
 
 # * date Author's Name <author's email> version-release
 # - Summary of changes
+* Wed Nov 13 2019 Halftux <less_to_space@web.de> 0.0.13-1
+- date shift option
+
 * Sun Nov 18 2018 Halftux <less_to_space@web.de> 0.0.12-1
 - stop updates before closing and writing gpx
 

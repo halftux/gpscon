@@ -56,12 +56,12 @@ void MainClass::run()
 	}
 	if ((g_lknv==true) && (g_runs==1))
 	{
-		m_position = new GpsPos(this, g_fout, g_posm, g_date, g_time);
+		m_position = new GpsPos(this, g_fout, g_posm, g_date, g_time, g_dshift);
 		quit();
 	}
 	else if (task)
 	{
-		m_position = new GpsPos(this, g_runs, g_limit, g_dumps, g_lknv, g_sat, g_fout, g_posm, g_interval, g_date, g_time, g_log, g_newtrack, g_script, g_tout);
+		m_position = new GpsPos(this, g_runs, g_limit, g_dumps, g_lknv, g_sat, g_fout, g_posm, g_interval, g_date, g_time, g_log, g_newtrack, g_script, g_tout, g_dshift);
 		connect(m_position, SIGNAL(finished()),this, SLOT(quit()));
 	}
 

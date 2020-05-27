@@ -44,6 +44,7 @@ int main(int argc, char *argv[])
 	myMain.g_dumps = QArgByKey("dumps",'=').toInt();
 	myMain.g_limit = QArgByKey("limit",'=').toInt();
 	myMain.g_tout = QArgByKey("tout",'=').toInt();
+	myMain.g_dshift = QArgByKey("dshift",'=').toInt();
 	myMain.g_sat = qApp->arguments().contains("--sat");
 	myMain.g_fout = qApp->arguments().contains("--fout");
 	myMain.g_lknv = qApp->arguments().contains("--lknv");
@@ -66,7 +67,7 @@ int main(int argc, char *argv[])
 	{
 		QTextStream cout(stdout);
 		cout << endl;
-		cout << "gpscon v0.0.12 by halftux" << endl << endl;
+		cout << "gpscon v0.0.13 by halftux" << endl << endl;
 		cout << "Options:" << endl;
 		cout << "--------" << endl;
 		cout << "  [--help] help output" << endl;
@@ -80,6 +81,7 @@ int main(int argc, char *argv[])
 		cout << "  [--del] deleting log files" << endl;
 		cout << "  [--sat] with satellite output" << endl;
 		cout << "  [--fout] full position output" << endl;
+		cout << "  [dshift=integer] day shift from date (7168)" << endl;
 		cout << "  [--date] date output" << endl;
 		cout << "  [--time] time output" << endl;
 		cout << "  [--newtrack] mark in log file" << endl;

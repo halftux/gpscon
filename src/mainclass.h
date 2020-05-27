@@ -25,6 +25,7 @@ public:
 	int g_limit;
 	int g_interval;
 	int g_tout;
+	int g_dshift;
 	bool g_del;
 	bool g_newtrack;
 	bool g_script;
